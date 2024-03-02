@@ -1,0 +1,127 @@
+.Container {
+  grid-area: "sidebar";
+  width: var(--left-sidebar-width);
+  height: 100%;
+}
+.QuickAccess,
+.SubContainer {
+  color: aliceblue;
+  background: #121212;
+  border-radius: 8px;
+}
+.QuickAccess ul {
+  padding: var(--common-padding);
+}
+.li {
+  display: flex;
+  gap: 20px;
+  padding: 4px 12px;
+  height: 40px;
+  font-size: 25px;
+  align-items: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: #b3b3b3;
+}
+
+.li.active,.li:hover {
+  color: #fff;
+}
+.li span {
+  font-size: var(--encore-text-size-base);
+  font-weight: 700;
+}
+
+.SubContainer {
+  margin-top: var(--panel-gap);
+  padding: 8px 24px;
+}
+
+.layer1,
+.layer3 {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content,
+.content1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  gap: var(--panel-gap);
+  font-weight: 700;
+  color: #a7a7a7;
+  cursor: pointer;
+}
+.content span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 4px 12px;
+  font-size: 25px;
+}
+.content1 span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 25px;
+}
+.content1 {
+  padding: 0;
+  gap: 20px;
+}
+.AddIcon {
+  padding: 0;
+  width: fit-content;
+  padding: 0.2rem;
+  transition: 0.2s ease-in;
+}
+#arrowBtn {
+  padding: 0.4rem;
+  font-size: 30px;
+}
+.AddIcon:hover,
+#arrowBtn:hover {
+  transition: 0.2s ease-out;
+  border-radius: 50px;
+  background: #1a1a1a;
+  color: azure;
+}
+.content:hover {
+  color: azure;
+}
+
+.layer2 {
+  margin-top: var(--panel-gap);
+  display: flex;
+  gap: 20px;
+}
+.ChipsBTN {
+  background: var(--background-tinted-highlight);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-transform: capitalize;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.ChipsBTN:hover {
+  background: rgba(128, 128, 128, 0.247);
+}
+
+.layer3 {
+  margin-top: var(--panel-gap);
+  padding: 4px 12px;
+}
+.layer3 span,
+.RecentBtn {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: #a7a7a7;
+}

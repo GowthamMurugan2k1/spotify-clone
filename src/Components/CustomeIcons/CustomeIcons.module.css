@@ -1,0 +1,27 @@
+.PlayBTN {
+    background: var(--background-base);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    position: absolute;
+    right: 5px;
+    bottom: 0px;
+    transition-duration: 33ms;
+    transition-timing-function: ease-out;
+    transition-property: bottom visibility;
+    visibility: hidden;
+    color: black;
+  }
+  .PlayBTN:hover{
+    transform: scale(1.1,1.1);
+  }
+  .PlayBTN.active {
+    transition-timing-function: ease;
+    bottom: 10px;
+    visibility: visible;
+    transition-duration: 0.2s;
+  }

@@ -1,0 +1,92 @@
+.Container {
+  position: relative;
+  height: fit-content;
+  color: #fff;
+  padding: var(--common-padding);
+  background: #121212;
+  border-radius: 8px;
+}
+
+.headSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 75px;
+  color: var(--text-subdued, #6a6a6a);
+  z-index: 100;
+}
+.ColorCodeDiv {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 180px;
+  left: 0;
+  z-index: 3;
+}
+.GradientEffect {
+  z-index: 10;
+  position: absolute;
+  height: 183px;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.6)),to(#121212));
+  top: 0px;
+  width: 100%;
+  left: 0px;
+}
+.leftContent ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-size: 30px;
+}
+.rightContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.leftContent ul li {
+  cursor: pointer;
+}
+.leftContent ul li:hover {
+  transform: scale(1.1, 1.1);
+}
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  color: var(--text-subdued, #6a6a6a);
+  position: relative;
+  z-index: 11;
+}
+
+#td,
+#th {
+  text-align: left;
+  padding: 8px;
+  text-transform: capitalize;
+  font-size: var(--encore-text-size-smaller);
+  position: relative;
+}
+
+.TitleContent {
+  display: flex;
+  gap: 10px;
+}
+.TitleInfoView {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+.NameOFTitle {
+  font-size: var(--encore-text-size-smaller);
+  color: #fff;
+  font-weight: 700;
+}
+
+.listCard:hover {
+  background: var(--background-tinted-highlight);
+  border-radius: 10px;
+}

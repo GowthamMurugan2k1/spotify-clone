@@ -6,6 +6,28 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --panel-gap: 8px;
+  --background-tinted-highlight: hsla(0, 0%, 100%, 0.1);
+  --encore-text-size-base: 1rem;
+  --left-sidebar-width: 412px;
+  --content-spacing: clamp(
+    16px,
+    16px +
+      (100vw - var(--left-sidebar-width, 0px) - var(--panel-width, 0px) - 600px)/424 *
+      8,
+    24px
+  );
+  --common-padding: 8px 24px;
+  --column-count: 4;
+  --column-width: 204.5px;
+  --grid-gap: 24px;
+  --min-container-width: 372px;
+  --text-subdued: #a7a7a7;
+  --text-base: #fff;
+  --background-base: #1ed760;
+  --encore-text-size-smaller: 0.875rem;
+  --encore-text-size-smaller-2: 0.75rem;
+  --button-size: 32px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,17 +39,82 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #000;
+  display: flex;
+  gap: var(--panel-gap);
+  /* grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto; */
+  height: 100vh;
+  min-height: 100%;
+  padding: var(--panel-gap);
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+.horizontal-slider {
+  width: 100%;
+  max-width: 500px;
+  height: 28px;
+}
+.horizontal-slider:hover ~ .example-track.example-track-2 {
+  background: #0f0;
+}
+
+.example-thumb {
+  font-size: 3em;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(204, 29, 29);
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 50px;
+}
+.example-thumb:active {
+  border: 1px solid red;
+}
+.example-track {
+  position: relative;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+.example-track:hover {
+  background: #0f0;
+}
+.example-track.example-track-1 {
+  background: #4949495e;
+}
+
+.example-track.example-track-2 {
+  background: #0f0;
+}
+
+.horizontal-slider .example-track {
+  top: 20px;
+  height: 5px;
+  border-radius: 10px;
+}
+
+.horizontal-slider .example-thumb {
+  /* top: 1px; */
+  bottom: 0px;
+  width: 13px;
+  height: 13px;
+  line-height: 50px;
+  position: absolute;
+  bottom: 0px;
 }

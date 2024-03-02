@@ -1,0 +1,22 @@
+.SliderWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 10px;
+}
+
+.sliderContainer {
+    font-family: sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .TopController{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }

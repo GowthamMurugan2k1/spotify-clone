@@ -1,0 +1,47 @@
+.MainContainer{
+    grid-area: 'mainview';
+    background-color: #121212;
+    height: 100vh;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+.MainContainer:hover{
+    overflow: auto;
+    padding-right:0px ;
+}
+
+.MainContainer::-webkit-scrollbar{
+    background:rgba(255, 0, 0, 0);
+    width: 13px;
+}
+.MainContainer::-webkit-scrollbar-thumb{
+    background: rgb(63, 63, 63);
+}
+.GreetingDiv{
+    display: flex-start;
+    justify-content: center;
+    position: relative;
+    margin: 64px 0 10px 8px;
+    height: 55px;
+    width:100%;
+}
+.Quick_play{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: var(--panel-gap);
+    position: relative;
+    overflow: hidden;
+}
+
+.TimeGreet{
+    height: 20px;
+    padding: var( --common-padding);
+    color: #fff;
+    font-weight: 700;
+    font-family: var(--font-family, CircularSpTitle,CircularSpTitle-Tall,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif));
+    font-size: 2rem;
+}
