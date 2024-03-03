@@ -13,7 +13,7 @@ import { useContext, } from "react";
 import UserContext from "@/store/UserContext";
 
 
-const index = ({colorCode}) => {
+const index = ({colorCode}) => { 
     const {isAccessToken,setAccessToken} = useContext(UserContext)
 
    
