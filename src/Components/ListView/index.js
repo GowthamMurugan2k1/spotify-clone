@@ -40,7 +40,7 @@ const index = ({ AudioData, colorCode, type, ImageUrl }) => {
   }
 
   return (
-    <section className={styles.Container} style={{ height: SongDetails.id ? type === 'album' ? 'fit-content':'90vh' : 'fit-content' }}>
+    <section className={styles.Container} style={{ height: SongDetails.id ? type === 'album' ? 'fit-content' : '90vh' : 'fit-content' }}>
       <div className={styles.ColorCodeDiv} style={{ background: colorCode }} />
       <div className={styles.GradientEffect} />
       <div className={styles.headSection}>
@@ -93,14 +93,15 @@ const index = ({ AudioData, colorCode, type, ImageUrl }) => {
                     )}
                   </td>
                   <td id={styles.td} className={styles.TitleContent}>
-                    {type !== "album" && (
-                      <Image
+                    {type !== "album" && (<>
+                      {album.images[2]["url"] && <Image
                         src={album.images[2]["url"]}
                         height={album.images[2]["height"]}
                         width={album.images[2]["width"]}
                         alt={album?.name}
                         className="rounded-md"
-                      />
+                      />}
+                    </>
                     )}
                     <span className={styles.TitleInfoView}>
                       <p className={styles.NameOFTitle}>{name}</p>
@@ -128,7 +129,7 @@ const index = ({ AudioData, colorCode, type, ImageUrl }) => {
                   className={styles.listCard}
                   onMouseEnter={() => setisMouseOverID(id)}
                   onMouseLeave={() => setisMouseOverID(null)}
-                  onClick={ () => UpdateSongdetails(item)}
+                  onClick={() => UpdateSongdetails(item)}
                   key={id}
                 >
                   <td id={styles.td}>

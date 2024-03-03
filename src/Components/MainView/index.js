@@ -12,15 +12,17 @@ function index() {
     const { isAccessToken } = useContext(UserContext)
     return (
         <div className={styles.MainContainer}>
-            <NavBar />
-            <div className={styles.Quick_play} style={{width:isAccessToken ? 'fit-content' : '100%', paddingRight:isAccessToken ? "13px" :'0px' }}>
-                {isAccessToken && <div className={styles.GreetingDiv}>
-                    <h2 className={styles.TimeGreet}>{Greetings()}</h2>
-                </div>}
-                { isAccessToken ? <>
-                    <FeaturedPlaylist />
-                    <Album />
-                </> : <Loginscreen/>}
+            <div className={styles.Innercontaier}>
+                <NavBar />
+                <div className={styles.Quick_play} style={{ width: isAccessToken ? 'fit-content' : '100%', paddingRight: isAccessToken ? "13px" : '0px' }}>
+                    {isAccessToken && <div className={styles.GreetingDiv}>
+                        <h2 className={styles.TimeGreet}>{Greetings()}</h2>
+                    </div>}
+                    {isAccessToken ? <>
+                        <FeaturedPlaylist />
+                        <Album />
+                    </> : <Loginscreen />}
+                </div>
             </div>
         </div>
     )

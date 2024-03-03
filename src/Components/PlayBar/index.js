@@ -20,15 +20,15 @@ const index = () => {
             style={{ display: !SongDetails.id ? "none" : "" }}
         >
             <div className={styles.leftContainer}>
-                <sapn className={styles.ImageContent}>
-                    <Image
+                <div className={styles.ImageContent}>
+                    {image &&<Image
                         src={image}
                         alt={title}
                         width={60}
                         height={60}
                         style={{ borderRadius: "8px" }}
-                    />
-                </sapn>
+                    />}
+                </div>
                 <span className="gap-2 flex flex-col w-1/3">
                     <h5 className="font-normal text-[length:var(--encore-text-size-smaller)] text-nowrap">
                         {title}

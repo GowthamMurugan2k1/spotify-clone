@@ -48,10 +48,11 @@ const index = ({colorCode}) => {
 
 export default index;
 
-export const HandleSignIN = async ({isAccessToken,setAccessToken,}) => {
+export const HandleSignIN = async (isAccessToken,setAccessToken) => {
     if(isAccessToken){
         return
     }
+    console.log(isAccessToken,'isAccessToken',setAccessToken)
     try {
         let body = new URLSearchParams({
             'grant_type': 'client_credentials',
@@ -61,11 +62,12 @@ export const HandleSignIN = async ({isAccessToken,setAccessToken,}) => {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Authorization': 'Basic ' + (Buffer.from(process.env.NEXT_PUBLIC_Client_ID + ':' + process.env.NEXT_PUBLIC_Client_Secret).toString('base64')),
             },
-        })
+        }).catch((e)=>{console.log(e,'error')})
+        
         const { access_token, expires_in } = req.data;
         setCookie('accesstoken', access_token, { maxAge: expires_in })
         setAccessToken(access_token)
-       
+        window.location.reload()
     } catch (error) {
         console.log(error, 'error')
     }

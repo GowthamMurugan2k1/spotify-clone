@@ -1,15 +1,16 @@
 .MainContainer{
-    grid-area: 'mainview';
     background-color: #121212;
     height: 100vh;
     width: 100%;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
 }
-.MainContainer:hover{
-    overflow: auto;
-    padding-right:0px ;
+.Innercontaier{
+    height: 100vh;
+    width: 100%;
+    border-radius: 8px;
+    position: relative;
 }
 
 .MainContainer::-webkit-scrollbar{

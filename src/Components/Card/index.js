@@ -16,17 +16,17 @@ const index = ({ CardData, i }) => {
     router.push(`/${type}/${id}`)
   }
   return (
-    <Fragment key={id}>
+    <Fragment key={id || i}>
       <div className={styles.Card_container} onMouseEnter={() => setisMousehover(id)} onMouseLeave={() => setisMousehover(null)} onClick={ ()=>handleClick(CardData)}>
         <div className={styles.ImageConatiner}>
-          <Image
+          {images[0]["url"] && <Image
             src={images[0]["url"]}
             width={1000}
             height={100}
             alt="image"
             layout="responsive"
             style={{ borderRadius: '8px' }}
-          />
+          />}
          <CustomeIcon isMouseHover={isMouseHover} id={id}/>
         </div>
         <div className={styles.InfoContent}>
