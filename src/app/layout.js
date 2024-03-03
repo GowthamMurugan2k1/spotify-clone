@@ -41,8 +41,8 @@ export default function RootLayout({ children }) {
   axios.defaults.baseURL = 'https://api.spotify.com/v1/';
   axios.defaults.headers.common["Authorization"] = `Bearer ${AUTH_TOKEN}`;
   return (
-    <html lang="en">
-      <body className={Spotify_Circular.variable}>
+    <html lang="en" className={`${Spotify_Circular.variable} font-sans`}>
+      <body >
         <SongPlayContextProvider>
           <UserContextProvider>
             <SidebarComp />
